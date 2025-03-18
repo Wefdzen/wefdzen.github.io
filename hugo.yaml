@@ -1,0 +1,13 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: Wefdzen 
+theme: ["PaperMod"]
+
+params:
+  defaultTheme: dark
+  homeInfoParams:
+    Title: Hi there wave
+    Content: Can be Info, links, about...
+  socialIcons: # optional
+    - name: "github"
+      url: "https://github.com/Wefdzen" 
