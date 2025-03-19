@@ -3,11 +3,49 @@ languageCode: en-us
 title: Wefdzen 
 theme: ["PaperMod"]
 
+enableEmoji: true
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: Archive
+          url: archives
+          weight: 5
+        - name: Search
+          url: search/
+          weight: 10
+        - name: Tags
+          url: tags/
+          weight: 10
+
 params:
+  #env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  #ShowShareButtons: true
+  ShowReadingTime: true
   defaultTheme: dark
+  ShowCodeCopyButtons: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+
   homeInfoParams:
     Title: Hi there wave
-    Content: Can be Info, links, about...
+    Content: >
+      Can be Info, links, about.....
   socialIcons: # optional
     - name: "github"
-      url: "https://github.com/Wefdzen" 
+      url: "https://github.com/Wefdzen"
+    - name: "telegram"
+      url: "https://t.me/Wefdzen"
+
+home:
+  - HTML
+  - RSS
+  - JSON # necessary for searchhub.com/Wefdzen" 
