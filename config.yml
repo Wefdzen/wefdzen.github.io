@@ -1,5 +1,13 @@
+baseURL: https://wefdzen.github.io/
+languageCode: en-us
+title: Wefdzen 
+theme: ["PaperMod"]
+
 params:
+  defaultTheme: dark
   homeInfoParams:
     Title: Hi there wave
     Content: Can be Info, links, about...
-  defaultTheme: light
+  socialIcons: # optional
+    - name: "github"
+      url: "https://github.com/Wefdzen" 
