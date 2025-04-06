@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>~/startpage</title>
+        <link rel="stylesheet" href="startpage/static/styles/style.css" />
+        <link
+            rel="icon"
+            href="startpage/static/icons/icon.svg"
+            type="image/x-icon"
+        />
+    </head>
+
+    <body>
+        <header id="settings-container">
+            <div id="settings-box">
+                <div id="settings-content">
+                    <div class="settings-options">
+                        <h1>Search Engine</h1>
+                        <h1>Colorscheme</h1>
+                    </div>
+
+                    <div class="settings-options">
+                        <select
+                            id="search-engine-selector"
+                            class="settings-selector"
+                            onchange="changeSearchEngine()"
+                        >
+                            <option value="https://search.brave.com/search">
+                                Brave
+                            </option>
+                            <option value="https://www.google.com/search">
+                                Google
+                            </option>
+                            <option value="https://duckduckgo.com/">
+                                DuckDuckGo
+                            </option>
+                        </select>
+
+                        <select
+                            id="colorscheme-selector"
+                            class="settings-selector"
+                            onchange="changeColorScheme()"
+                        >
+                            <option value="dracula-dark">Dracula Dark</option>
+                            <option value="dracula-light">Dracula Light</option>
+                            <option value="edge">Edge</option>
+                            <option value="gruvbox">Gruvbox</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button onclick="hideSettings()" id="settings-hide">
+                    <img
+                        src="startpage/static/icons/close.svg"
+                        class="svg-icon"
+                        alt="Settings Icon"
+                    />
+                </button>
+            </div>
+        </header>
+
+        <button onclick="showSettings()" id="settings-display">
+            <img
+                src="startpage/static/icons/settings.svg"
+                class="svg-icon"
+                alt="Settings Icon"
+            />
+        </button>
+
+        <nav id="shortcuts-container">
+            <h1 id="title-display">Welcome back!</h1>
+            <h2 id="date-display"></h2>
+
+            <form
+                id="search-form"
+                method="get"
+                onsubmit="return handleSearch(event)"
+            >
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search"
+                    name="q"
+                    autofocus
+                />
+            </form>
+
+            <ul>
+                <li>~/Personal </li>
+                <li><a href="https://reddit.com/">Reddit</a></li>
+                <li><a href="https://app.daily.dev/">Daily Dev</a></li>
+                <li><a href="https://modrinth.com/dashboard">Modrinth</a></li>
+                <li><a href="https://www.ivanime.com/">Ivanime</a></li>
+                <li><a href="https://myanimelist.net/">MyAnimeList</a></li>
+            </ul>
+            <ul>
+                <li>~/dev </li>
+                <li><a href="https://github.com/Wefdzen">GitHub</a></li>
+                <li><a href="https://devdocs.io/">DevDocs</a></li>
+                <li><a href="https://w3schools.com">W3Schools</a></li>
+                <li><a href="https://leetcode.com/problemset/">Letcode</a></li>
+                <li>
+                    <a href="https://www.virustotal.com/gui/home/upload"
+                        >VirusTotal</a
+                    >
+                </li>
+            </ul>
+            <ul>
+                <li>~/academic 拾</li>
+                <li>
+                    <a href="https://conest.ciens.ucv.ve/webapp/">Conest</a>
+                </li>
+                <li>
+                    <a href="https://portalasig2.ciens.ucv.ve/#/"
+                        >PortalAsig2</a
+                    >
+                </li>
+                <li>
+                    <a href="https://campusvirtualucv.org/ead/login/index.php"
+                        >Campus Virtual</a
+                    >
+                </li>
+                <li><a href="https://correo.ciens.ucv.ve">CiensMail</a></li>
+                <li>
+                    <a href="https://www.geogebra.org/calculator">Geogebra</a>
+                </li>
+            </ul>
+            <ul>
+                <li>~/linux </li>
+                <li>
+                    <a href="https://github.com/druxorey/dotfiles">Dotfiles</a>
+                </li>
+                <li><a href="https://wiki.archlinux.org/">Arch Wiki</a></li>
+                <li><a href="https://explainshell.com/#">Explain Shell</a></li>
+                <li><a href="https://www.reddit.com/">Techthings</a></li>
+                <li><a href="https://chat.deepseek.com/">Deepseek</a></li>
+            </ul>
+        </nav>
+
+        <div id="image-container">
+            <a href="index.html"
+                ><img
+                    id="image-display"
+                    alt="fem"
+                    src="startpage/static/images/img.webp"
+            /></a>
+            <div id="icons-box">
+                <a href="https://calendar.google.com/calendar/u/0/r">
+                    <img
+                        src="startpage/static/icons/calendar.svg"
+                        class="svg-icon"
+                        alt="Calendar Icon"
+                    />
+                </a>
+                <a href="https://tasks.google.com/tasks/">
+                    <img
+                        src="startpage/static/icons/tasks.svg"
+                        class="svg-icon"
+                        alt="Tasks Icon"
+                    />
+                </a>
+                <a href="https://drive.google.com/drive/my-drive">
+                    <img
+                        src="startpage/static/icons/drive.svg"
+                        class="svg-icon"
+                        alt="Drive Icon"
+                    />
+                </a>
+                <a href="https://www.notion.so/">
+                    <img
+                        src="startpage/static/icons/notion.svg"
+                        class="svg-icon"
+                        alt="Notion Icon"
+                    />
+                </a>
+            </div>
+        </div>
+
+        <script
+            type="text/javascript"
+            src="startpage/scripts/get_date.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="startpage/scripts/get_search_engine.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="startpage/scripts/set_colorscheme.js"
+        ></script>
+    </body>
+</html>
